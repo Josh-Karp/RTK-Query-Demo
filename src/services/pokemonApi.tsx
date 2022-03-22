@@ -9,7 +9,7 @@ export const pokemonApi = createApi({
   endpoints: (builder) => ({
     getPokemon: builder.query<IPokemon, string>({
       query: (id) => `pokemon/${id}`,
-      transformResponse: (response: any) => {
+      transformResponse: (response: any) => { // Optionally transform the cached response
         
         const pokemonType: string = response.types
           .map((poke: any) => poke.type.name)
